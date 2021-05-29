@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var articlesViewModel: ArticlesViewModel
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(articlesViewModel.articles) {article in
+            Text(article.title)
+        }
     }
 }
 
